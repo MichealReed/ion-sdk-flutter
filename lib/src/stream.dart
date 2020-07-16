@@ -41,7 +41,7 @@ class Stream extends EventEmitter {
             "noiseSuppression": true,
         };
         this._stream = await navigator
-            .getUserMedia(_buildMediaConstraints(audioConstrains, videoConstrains));
+            .getUserMedia(_buildMediaConstraints(audio ? audioConstrains : false, video ? videoConstrains : false));
       }
     }
   }
