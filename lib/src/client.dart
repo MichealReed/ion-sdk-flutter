@@ -32,7 +32,7 @@ class Client extends EventEmitter {
 
   final Map<String, dynamic> defaultIceServers = {
     'iceServers': [
-      {'url': 'stun:stun.stunprotocol.org:3478'},
+      {'urls': 'stun:stun.stunprotocol.org:3478'},
       /*
        * turn server configuration example.
       {
