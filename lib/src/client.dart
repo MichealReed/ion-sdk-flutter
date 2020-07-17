@@ -486,7 +486,7 @@ class Client extends EventEmitter {
           var info = data['info'];
           logger.debug(
               'peer-join peer rid => $rid, uid => $uid, info => ${info.toString()}');
-          this.emit('peer-join', rid, uid, info);
+          this.emit('peer-join', [rid, uid, info]);
           break;
         }
       case 'peer-leave':
@@ -494,7 +494,7 @@ class Client extends EventEmitter {
           var rid = data['rid'];
           var uid = data['uid'];
           logger.debug('peer-leave peer rid => $rid, uid => $uid');
-          this.emit('peer-leave', rid, uid);
+          this.emit('peer-leave', [rid, uid]);
           break;
         }
       case 'stream-add':
@@ -505,7 +505,7 @@ class Client extends EventEmitter {
           var tracks = data['tracks'];
           logger.debug(
               'stream-add peer rid => $rid, mid => $mid, info => ${info.toString()},  tracks => $tracks');
-          this.emit('stream-add', rid, mid, info, tracks);
+          this.emit('stream-add', [rid, mid, info, tracks]);
           break;
         }
       case 'stream-remove':
@@ -513,7 +513,7 @@ class Client extends EventEmitter {
           var rid = data['rid'];
           var mid = data['mid'];
           logger.debug('stream-remove peer rid => $rid, mid => $mid');
-          this.emit('stream-remove', rid, mid);
+          this.emit('stream-remove', [rid, mid]);
           this._removePC(mid);
           break;
         }
@@ -524,7 +524,7 @@ class Client extends EventEmitter {
           var info = data['info'];
           logger.debug(
               'broadcast peer rid => $rid, uid => $uid, info => ${info.toString()}');
-          this.emit('broadcast', rid, uid, info);
+          this.emit('broadcast', [rid, uid, info]);
           break;
         }
     }
