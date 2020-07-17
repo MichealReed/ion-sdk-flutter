@@ -207,7 +207,7 @@ class Client extends EventEmitter {
     try {
       logger.debug('create receiver => $mid');
       RTCPeerConnection pc = await createPeerConnection(_iceServers, _config);
-      bool sendOffer = false;
+      bool sendOffer = true;
       var sub_mid = "";
       pc.onAddStream = (stream) {
         logger.debug('Stream::pc::onaddstream ' + stream.id);
