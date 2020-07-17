@@ -237,7 +237,7 @@ class Client extends EventEmitter {
       };
 
       addTransceiver(pc, "audio", {"direction": 'recvonly'});
-      addTransceiver(pc, "video", {"direction": 'recvonly'});
+     // addTransceiver(pc, "video", {"direction": 'recvonly'});
 
       var offer = await pc.createOffer({
         'mandatory': {
