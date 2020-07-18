@@ -33,6 +33,11 @@ class Client extends EventEmitter {
   final Map<String, dynamic> defaultIceServers = {
     'iceServers': [
       {'urls': 'stun:stun.stunprotocol.org:3478'},
+      {
+        'urls': 'turn:numb.viagenie.ca',
+        'credential': 'muazkh',
+        'username': 'webrtc@live.com'
+      },
       /*
        * turn server configuration example.
       {
