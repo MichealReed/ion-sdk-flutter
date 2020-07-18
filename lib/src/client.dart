@@ -14,8 +14,8 @@ import 'utils.dart' if (dart.library.js) 'utils_web.dart';
 const DefaultPayloadTypePCMU = 0;
 const DefaultPayloadTypePCMA = 8;
 const DefaultPayloadTypeG722 = 9;
-const DefaultPayloadTypeOpus = 111;
-const DefaultPayloadTypeVP8 = 96;
+const DefaultPayloadTypeOpus = 114;
+const DefaultPayloadTypeVP8 = 120;
 const DefaultPayloadTypeVP9 = 98;
 const DefaultPayloadTypeH264 = 102;
 
@@ -56,9 +56,10 @@ class Client extends EventEmitter {
     ],
   };
 
-  Client(url, [iceServers]) {
+  Client(url, {iceServers, uid}) {
+    _uid = _uid == null ? _uuid.v4() : uid;
     _iceServers = iceServers != null ? iceServers : defaultIceServers;
-    _uid = _uuid.v4();
+    if (_uid == null) {}
     _url = url + '?peer=' + _uid;
     _protoo = new Peer(_url);
 
