@@ -57,7 +57,7 @@ class Client extends EventEmitter {
   };
 
   Client(url, {iceServers, uid}) {
-    _uid = _uid == null ? _uuid.v4() : uid;
+    _uid = uid == null ? _uuid.v4() : uid;
     _iceServers = iceServers != null ? iceServers : defaultIceServers;
     if (_uid == null) {}
     _url = url + '?peer=' + _uid;
