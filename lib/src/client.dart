@@ -14,10 +14,10 @@ import 'utils.dart' if (dart.library.js) 'utils_web.dart';
 const DefaultPayloadTypePCMU = 0;
 const DefaultPayloadTypePCMA = 8;
 const DefaultPayloadTypeG722 = 9;
-const DefaultPayloadTypeOpus = 114;
+const DefaultPayloadTypeOpus = 102;
 const DefaultPayloadTypeVP8 = 120;
 const DefaultPayloadTypeVP9 = 98;
-const DefaultPayloadTypeH264 = 102;
+const DefaultPayloadTypeH264 = 96;
 
 class Client extends EventEmitter {
   JsonEncoder _encoder = JsonEncoder();
